@@ -52,24 +52,8 @@ Sonrasında size participation key verecek bunu da bir yere kaydedin bu key bell
 
 
 ## 2. Eski Node'u Swarm ile Değiştirme
-Öncelikle eski node'u offline yapalım.
-```
-getaddress() {
-  if [ "$addr" == "" ]; then echo -ne "\nNote: Completing this will remember your address until you log out. "; else echo -ne "\nNote: Using previously entered address. "; fi; echo -e "To forget the address, press Ctrl+C and enter the command:\n\tunset addr\n";
-  count=0; while ! (echo "$addr" | grep -E "^[A-Z2-7]{58}$" > /dev/null); do
-    if [ $count -gt 0 ]; then echo "Invalid address, please try again."; fi
-    echo -ne "\nEnter your voi address: "; read addr;
-    addr=$(echo "$addr" | sed 's/ *$//g'); count=$((count+1));
-  done; echo "Using address: $addr"
-}
-getaddress &&\
-goal account changeonlinestatus -a $addr -o=0 &&\
-sleep 1 &&\
-goal account dump -a $addr | jq -r 'if (.onl == 1) then "You are online!" else "You are offline." end'
-```
-'You are offline.' çıktısını alıyorsanız tamamdır.
 
-Sonrasında servisi durdurup disable edelim.
+Öncelikle servisi durdurup disable edelim.
 ```
 sudo systemctl stop voi
 sudo systemctl disable voi
@@ -80,3 +64,12 @@ Daha sonra aşağıdaki komutları çalıştıralım.
 export VOINETWORK_IMPORT_ACCOUNT=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/VoiNetwork/voi-swarm/main/install.sh)"
 ```
+
+Aşamaları takip edelim. Wallet için password oluşturacağız daha sonra wallet kelimeleri girerek cüzdanı import edeceğiz.
+
+Daha sonra şu dizine giderek komutu çalıştıralım.
+```
+cd root/voi/bin
+./migrate-from-d13-setup
+```
+
