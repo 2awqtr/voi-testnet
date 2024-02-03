@@ -11,18 +11,15 @@ Aşağıdaki kodu çalıştırın ve adımları takip edin.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/VoiNetwork/voi-swarm/main/install.sh)"
 ```
 Aşağıdaki gibi telemetry name soracak istediğiniz bir ismi yazıp enter tuşuna basın
-```
-Telemetry name:
-```
+
+> Telemetry name:
+
 Cüzdan için bir şifre belirlemenizi isteyecek oluşturmak istediğiniz şifreyi girin ve enter'a basın.
-```
-Please choose a password for wallet 'voi':
-```
+> Please choose a password for wallet 'voi':
 
 Çıkan soruya y'ye basarak onaylayın ve backup keylerini bir yere kaydedin.
-```
-Would you like to see it now? (Y/n):
-```
+
+> Would you like to see it now? (Y/n):
 
 Daha sonra şu şekilde bir çıktı ile cüzdanınızın public key'ini verecek. Bu cüzdana voi discorddan 1 VOI göndermeniz gerekiyor.
 ```
