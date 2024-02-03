@@ -77,7 +77,6 @@ sudo systemctl disable voi
 
 Daha sonra aşağıdaki komutları çalıştıralım.
 ```
-export VOINETWORK_SKIP_WALLET_SETUP=1
 export VOINETWORK_IMPORT_ACCOUNT=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/VoiNetwork/voi-swarm/main/install.sh)"
 ```
